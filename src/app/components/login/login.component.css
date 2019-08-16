@@ -1,0 +1,41 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.left{
+    text-align: left;
+}
+
+.card{
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.form-group{
+    width: 100%;
+}
+
+.button-div{
+    display: flex; 
+    justify-content: center;
+}
+
+input, input:focus{
+    background-color: #343a40;
+    color: white;
+}
+
+
+::placeholder{
+    color: white;
+}
+
+*{
+    color: white;
+}
