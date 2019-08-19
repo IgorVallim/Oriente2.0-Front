@@ -1,14 +1,15 @@
-<div class="main bg-dark">
-    <div class="col-12 col-md-5 bg-secondary card">
+<div class="main">
+    <div class="col-12 col-md-5 bg-white card">
         <h1>Login</h1>
-        <form class="form-group">
+        <form class="form-group" [formGroup]="login" (ngSubmit)="onFormSubmit()">
             <div class="row mt-4">
                 <div class="col-3 left ">
                     <label class="mt-1" for="tia">TIA: </label>
                 </div>
                 <div class="col-12 col-md-9">
-                    <input class="form-control" type="text" name="tia" id="tia" placeholder="Insira seu TIA"
-                        autofocus />
+                    <input class="form-control" type="text" formControlName="tia" name="tia" id="tia" placeholder="Insira seu TIA"
+                        required autofocus />
+                    <small class="text-danger" *ngIf="!login.controls.tia.valid && login.controls.tia.touched">O TIA é obrigatório!</small>    
                 </div>
             </div>
             <div class="row mt-3">
@@ -16,18 +17,19 @@
                     <label class="mt-1" for="password">Senha: </label>
                 </div>
                 <div class="col-12 col-md-9">
-                    <input class="form-control" type="password" name="password" id="password"
-                        placeholder="Insira sua senha"/>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-12 col-md-4 left">
-                    <span>Esqueceu sua senha?</span>
+                    <input class="form-control" type="password" name="password" formControlName="password" id="password"
+                        placeholder="Insira sua senha" required/>
+                    <small class="text-danger" *ngIf="!login.controls.password.valid && login.controls.password.touched">A senha é obrigatória!</small>      
                 </div>
             </div>
             <div class="row mt-4 button-div">
                 <div class="col-12">
-                    <button class="btn btn-danger w-100" type="submit">Login</button>
+                    <button [disabled]="!login.controls.tia.valid || !login.controls.password.valid" class="btn btn-danger w-100" type="submit">Login</button>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 left">
+                    <span>Esqueceu sua senha?</span>
                 </div>
             </div>
         </form>
