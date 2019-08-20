@@ -8,11 +8,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginService {
 
-  API: string = environment.API + "auth/login";
+  API: string = environment.API + "auth/";
 
   constructor(private http: HttpClient) { }
 
-  login(tia: string, password: string){
-    return this.http.post<any>(this.API, { "tia": tia, "password": password });
+  login(tia: string, password: string, path: string){
+    return this.http.post<any>(this.API+path, { "tia": tia, "password": password });
   }
 }
