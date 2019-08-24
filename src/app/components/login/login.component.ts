@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { LoginService } from 'src/app/services/login.service';
-import { User } from 'src/app/models/user';
+import { AuthService } from 'src/app/services/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { student, professor } from 'src/app/constants/login';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-login',
@@ -13,20 +14,17 @@ export class LoginComponent implements OnInit {
 
   login: FormGroup;
   user: User;
-  id: string;
-  api: string;
+  error: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private loginService: LoginService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private loginService: AuthService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
 
     this.route.paramMap.subscribe(params => {
       if(params.get("user")==="professor"){
-        this.id = "DRT";
-        this.api = "login-teacher";
+        this.user = professor;
       }else{
-        this.id = "TIA";
-        this.api = "login";
+        this.user = student;
       }
     })
 
@@ -38,14 +36,13 @@ export class LoginComponent implements OnInit {
   }
 
   onFormSubmit(){
-    this.loginService.login(this.login.controls.id.value, this.login.controls.password.value, this.api).subscribe(
+    this.loginService.login(this.login.controls.id.value, this.login.controls.password.value, this.user.api).subscribe(
       response => {
-        this.user = response.data;
-        console.log(response);
-        this.router.navigate(["/aluno/home"]);
+        localStorage.setItem("token", response.headers.get("token"));
+        this.router.navigate([this.user.route + response.body.data.id]);
       },
       error => {
-        console.log(error);
+        this.error = true;
       }
     );
   }

@@ -4,12 +4,12 @@
         <form class="form-group" [formGroup]="login" (ngSubmit)="onFormSubmit()">
             <div class="row mt-4">
                 <div class="col-3 left ">
-                    <label class="mt-1" for="id">{{id}}: </label>
+                    <label class="mt-1" for="id">{{user.id}}: </label>
                 </div>
                 <div class="col-12 col-sm-9">
-                    <input class="form-control" type="text" formControlName="id" name="id" id="id" placeholder="Insira seu {{id}}"
+                    <input class="form-control" type="text" formControlName="id" id="id" placeholder="Insira seu {{user.id}}"
                         required autofocus />
-                    <small class="text-danger" *ngIf="!login.controls.id.valid && login.controls.id.touched">O {{id}} é obrigatório!</small>    
+                    <small class="text-danger" *ngIf="!error && !login.controls.id.valid && login.controls.id.touched">O {{user.id}} é obrigatório!</small>    
                 </div>
             </div>
             <div class="row mt-3">
@@ -17,9 +17,10 @@
                     <label class="mt-1" for="password">Senha: </label>
                 </div>
                 <div class="col-12 col-sm-9">
-                    <input class="form-control" type="password" name="password" formControlName="password" id="password"
+                    <input class="form-control" type="password" formControlName="password" id="password"
                         placeholder="Insira sua senha" required/>
-                    <small class="text-danger" *ngIf="!login.controls.password.valid && login.controls.password.touched">A senha é obrigatória!</small>      
+                    <small class="text-danger" *ngIf="!error && !login.controls.password.valid && login.controls.password.touched">A senha é obrigatória!</small>
+                    <small class="text-danger" *ngIf="error">Credenciais inválidas!</small>       
                 </div>
             </div>
             <div class="row mt-4 button-div">

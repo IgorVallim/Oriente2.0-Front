@@ -1,1 +1,13 @@
-<p>student-home works!</p>
+<mat-sidenav-container fullscreen>
+    <mat-sidenav [fixedInViewport]="true" #sidenav role="navigation">
+      <!--this is a place for us to add side-nav code-->
+      <app-side-menu (sidenavClose)="sidenav.close()"></app-side-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <!--in here all the content must reside. We will add a navigation header as well-->
+      <app-menu (sidenavToggle)="sidenav.toggle()"></app-menu>
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
