@@ -1,12 +1,12 @@
 const student = {
+    name: "student",
     id: "TIA",
-    api: "login",
     route: "/aluno/"
 };
 
 const professor = {
+    name: "professor",
     id: "DRT",
-    api: "login-teacher",
     route: "/professor/"
 };
 

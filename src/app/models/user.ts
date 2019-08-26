@@ -1,5 +1,5 @@
 export class User{
+    name: string;
     id: string;
-    api: string;
     route: string;
 }

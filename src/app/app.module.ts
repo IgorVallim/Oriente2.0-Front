@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatSidenavModule, MatToolbarModule } from '@angular/material';
+import { MatSidenavModule, MatToolbarModule, MatIconModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,7 @@ import { AreaComponent } from './components/area/area.component';
 import { StudentHomeComponent } from './components/student-home/student-home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
+import { IconComponent } from './components/icon/icon.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SideMenuComponent } from './components/side-menu/side-menu.component';
     AreaComponent,
     StudentHomeComponent,
     MenuComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    IconComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { SideMenuComponent } from './components/side-menu/side-menu.component';
     FlexLayoutModule,
     MatSidenavModule,
     MatToolbarModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule, 
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,7 @@
 .mat-drawer-container{
     background-color: #e3e3e3;
 }
+
+mat-sidenav {
+    width: 70%;
+}

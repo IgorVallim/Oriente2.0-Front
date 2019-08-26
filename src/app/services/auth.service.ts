@@ -12,7 +12,11 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  login(tia: string, password: string, path: string){
-    return this.http.post<any>(this.API+path, { "tia": tia, "password": password }, { observe: "response" });
+  loginStudent(tia: string, password: string){
+    return this.http.post<any>(this.API + "login", { "tia": tia, "password": password }, { observe: "response" });
+  }
+
+  loginProfessor(drt: string, password: string){
+    return this.http.post<any>(this.API + "login-teacher", { "drt": drt, "password": password }, { observe: "response" });
   }
 }

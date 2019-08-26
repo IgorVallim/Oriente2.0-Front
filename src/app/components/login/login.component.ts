@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
 
     this.route.paramMap.subscribe(params => {
-      if(params.get("user")==="professor"){
+      if(params.get("user")===professor.name){
         this.user = professor;
       }else{
         this.user = student;
@@ -36,15 +36,28 @@ export class LoginComponent implements OnInit {
   }
 
   onFormSubmit(){
-    this.loginService.login(this.login.controls.id.value, this.login.controls.password.value, this.user.api).subscribe(
-      response => {
-        localStorage.setItem("token", response.headers.get("token"));
-        this.router.navigate([this.user.route + response.body.data.id]);
-      },
-      error => {
-        this.error = true;
-      }
-    );
+    if(this.user.name === professor.name){
+      this.loginService.loginProfessor(this.login.controls.id.value, this.login.controls.password.value).subscribe(
+        response => {
+          localStorage.setItem("token", response.headers.get("token"));
+          this.router.navigate([this.user.route + response.body.data.id]);
+        },
+        error => {
+          this.error = true;
+        }
+      );
+    }else{
+      this.loginService.loginStudent(this.login.controls.id.value, this.login.controls.password.value).subscribe(
+        response => {
+          localStorage.setItem("token", response.headers.get("token"));
+          this.router.navigate([this.user.route + response.body.data.id]);
+        },
+        error => {
+          this.error = true;
+        }
+      );
+    }
+    
   }
 }
 

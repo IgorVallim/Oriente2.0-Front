@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { StudentService } from 'src/app/services/student.service';
 
 @Component({
   selector: 'app-student-home',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private studentService: StudentService) { }
 
   ngOnInit() {
+
+    this.route.params.subscribe(
+      params => {
+        this.studentService.getDetails(params['id'], localStorage.getItem("token")).subscribe(
+          response => console.log(response)
+        );
+      }
+    );
   }
 
 }
