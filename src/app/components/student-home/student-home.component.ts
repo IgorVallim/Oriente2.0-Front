@@ -16,7 +16,7 @@ export class StudentHomeComponent implements OnInit {
     this.route.params.subscribe(
       params => {
         this.studentService.getDetails(params['id'], localStorage.getItem("token")).subscribe(
-          response => console.log(response)
+          response => {}
         );
       }
     );

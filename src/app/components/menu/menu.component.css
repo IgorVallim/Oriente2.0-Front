@@ -3,3 +3,10 @@
         border-radius: 0px;
     }
 }
+
+.menu{
+    position: fixed;
+    z-index: 666;
+}
+
+

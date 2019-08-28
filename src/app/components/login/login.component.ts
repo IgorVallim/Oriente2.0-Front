@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
       this.loginService.loginStudent(this.login.controls.id.value, this.login.controls.password.value).subscribe(
         response => {
           localStorage.setItem("token", response.headers.get("token"));
-          this.router.navigate([this.user.route + response.body.data.id]);
+          this.router.navigate([this.user.route + response.body.data.id + "/orientadores"]);
         },
         error => {
           this.error = true;

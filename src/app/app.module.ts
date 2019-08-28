@@ -14,6 +14,8 @@ import { StudentHomeComponent } from './components/student-home/student-home.com
 import { MenuComponent } from './components/menu/menu.component';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { IconComponent } from './components/icon/icon.component';
+import { ProfessorListComponent } from './components/professor-list/professor-list.component';
+import { ProfessorCardComponent } from './components/professor-card/professor-card.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { IconComponent } from './components/icon/icon.component';
     StudentHomeComponent,
     MenuComponent,
     SideMenuComponent,
-    IconComponent
+    IconComponent,
+    ProfessorListComponent,
+    ProfessorCardComponent
   ],
   imports: [
     BrowserModule,

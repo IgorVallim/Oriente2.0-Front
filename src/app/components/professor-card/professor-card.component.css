@@ -1,0 +1,16 @@
+.card{
+    height: 300px;
+    padding: 5px;
+}
+
+img{
+    height: 200px;
+    object-fit: scale-down;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
