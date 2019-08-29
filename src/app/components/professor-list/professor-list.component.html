@@ -1,45 +1,5 @@
 <div class="row">
-    <div class="col-12 col-sm-3 mt-4">
-        <app-professor-card></app-professor-card>
-    </div>
-    <div class="col-12 col-sm-3 mt-4">
-        <app-professor-card></app-professor-card>
-    </div>
-    <div class="col-12 col-sm-3 mt-4">
-        <app-professor-card></app-professor-card>
-    </div>
-    <div class="col-12 col-sm-3 mt-4">
-        <app-professor-card></app-professor-card>
+    <div *ngFor="let item of professors" class="col-12 col-sm-3 mt-4">
+        <app-professor-card [professor]="item"></app-professor-card>
     </div>
 </div>
-<div class="row">
-    <div class="col-12 col-sm-3 mt-4">
-        <app-professor-card></app-professor-card>
-    </div>
-    <div class="col-12 col-sm-3 mt-4">
-        <app-professor-card></app-professor-card>
-    </div>
-    <div class="col-12 col-sm-3 mt-4">
-        <app-professor-card></app-professor-card>
-    </div>
-    <div class="col-12 col-sm-3 mt-4">
-        <app-professor-card></app-professor-card>
-    </div>
-</div>
-<div class="row">
-    <div class="col-12 col-sm-3 mt-4">
-        <app-professor-card></app-professor-card>
-    </div>
-    <div class="col-12 col-sm-3 mt-4">
-        <app-professor-card></app-professor-card>
-    </div>
-    <div class="col-12 col-sm-3 mt-4">
-        <app-professor-card></app-professor-card>
-    </div>
-    <div class="col-12 col-sm-3 mt-4">
-        <app-professor-card></app-professor-card>
-    </div>
-</div>
-
-
-

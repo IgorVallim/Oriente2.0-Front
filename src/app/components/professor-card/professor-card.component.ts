@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Professor } from 'src/app/models/professor';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-professor-card',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfessorCardComponent implements OnInit {
 
-  constructor() { }
+  @Input() professor: Professor;
+
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+  }
+
+  openForm(){
+    this.router.navigate(["../cadastro-tcc"], { relativeTo: this.route });
   }
 
 }

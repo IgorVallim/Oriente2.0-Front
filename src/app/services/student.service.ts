@@ -7,10 +7,12 @@ import { environment } from 'src/environments/environment';
 })
 export class StudentService {
 
+  API: string = environment.API + "students/";
+
   constructor(private http: HttpClient) {}
 
   getDetails(id: string, token: string){
     let headers = { headers: new HttpHeaders({'Authorization': token}) };
-    return this.http.get<any>(environment.API + "students/detail/" + id, headers);
+    return this.http.get<any>(this.API + "detail/" + id, headers);
   }
 }

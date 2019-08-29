@@ -16,6 +16,7 @@ import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { IconComponent } from './components/icon/icon.component';
 import { ProfessorListComponent } from './components/professor-list/professor-list.component';
 import { ProfessorCardComponent } from './components/professor-card/professor-card.component';
+import { FormTccComponent } from './components/form-tcc/form-tcc.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ProfessorCardComponent } from './components/professor-card/professor-ca
     SideMenuComponent,
     IconComponent,
     ProfessorListComponent,
-    ProfessorCardComponent
+    ProfessorCardComponent,
+    FormTccComponent
   ],
   imports: [
     BrowserModule,
