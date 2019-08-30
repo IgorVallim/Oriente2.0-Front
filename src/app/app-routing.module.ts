@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: "", component: AreaComponent },
   { path: "aluno/:id", component: StudentHomeComponent, children: [
       { path: "orientadores", component: ProfessorListComponent },
-      { path: "cadastro-tcc", component: FormTccComponent } 
+      { path: "cadastro-tcc/:orientador", component: FormTccComponent } 
   ]}
 ];
 

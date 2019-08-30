@@ -11,7 +11,7 @@ export class StudentService {
 
   constructor(private http: HttpClient) {}
 
-  getDetails(id: string, token: string){
+  getDetail(id: string, token: string){
     let headers = { headers: new HttpHeaders({'Authorization': token}) };
     return this.http.get<any>(this.API + "detail/" + id, headers);
   }

@@ -1,11 +1,11 @@
 <div (click)="openForm()" class="bg-white card">
     <div class="row">
         <div class="col-12">
-            <img src="https://img3.stockfresh.com/files/k/kraska/m/60/808336_stock-photo-user-icon.jpg" class="w-100"/>
+            <img [src]="image" class="w-100"/>
         </div>
     </div>
     <div class="row">
-        <div class="col-12 info">
+        <div class="col-12 info  mt-3">
             <h5>{{professor.name}}</h5>
             <span>{{professor.email}}</span>
         </div>

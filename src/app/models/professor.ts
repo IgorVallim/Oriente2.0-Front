@@ -3,4 +3,5 @@ export class Professor{
     drt: number;
     name: string;
     email: string;
+    photo: string;
 }

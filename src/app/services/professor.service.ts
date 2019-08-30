@@ -15,4 +15,9 @@ export class ProfessorService {
     let headers = { headers: new HttpHeaders({'Authorization': token}) };
     return this.http.get<any>(this.API + "teacher-list/", headers);
   }
+
+  getDetail(id: string, token: string){
+    let headers = { headers: new HttpHeaders({'Authorization': token}) };
+    return this.http.get<any>(this.API + "detail/" + id, headers);
+  }
 }
