@@ -8,15 +8,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
-import { AreaComponent } from './components/area/area.component';
-import { StudentHomeComponent } from './components/student-home/student-home.component';
-import { MenuComponent } from './components/menu/menu.component';
-import { SideMenuComponent } from './components/side-menu/side-menu.component';
-import { IconComponent } from './components/icon/icon.component';
-import { ProfessorListComponent } from './components/professor-list/professor-list.component';
-import { ProfessorCardComponent } from './components/professor-card/professor-card.component';
-import { FormTccComponent } from './components/form-tcc/form-tcc.component';
+import { LoginComponent } from './components/shared/login/login.component';
+import { AreaComponent } from './components/shared/area/area.component';
+import { StudentHomeComponent } from './components/student/student-home/student-home.component';
+import { MenuComponent } from './components/student/menu/menu.component';
+import { SideMenuComponent } from './components/student/side-menu/side-menu.component';
+import { IconComponent } from './components/utils/icon/icon.component';
+import { ProfessorListComponent } from './components/student/professor-list/professor-list.component';
+import { ProfessorCardComponent } from './components/student/professor-card/professor-card.component';
+import { FormTccComponent } from './components/student/form-tcc/form-tcc.component';
+import { AuthGuardService } from './services/authentication/auth-guard.service'; 
+
 
 @NgModule({
   declarations: [
@@ -43,7 +45,7 @@ import { FormTccComponent } from './components/form-tcc/form-tcc.component';
     BrowserAnimationsModule, 
     MatIconModule
   ],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

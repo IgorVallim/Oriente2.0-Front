@@ -16,6 +16,7 @@ export class FormTccComponent implements OnInit {
   professor: Professor;
   student: Student;
   form: FormGroup;
+  groupSize: number = 1;
 
   constructor(private professorService: ProfessorService, private route: ActivatedRoute, private formBuilder: FormBuilder, private studentService: StudentService) { }
 
@@ -25,6 +26,11 @@ export class FormTccComponent implements OnInit {
       theme: ['', Validators.required],
       description: ['', Validators.required]
     });
+
+    let student = new FormControl("");
+    this.form.addControl("student-02", student);
+    this.form.addControl("student-03", student);
+    this.form.addControl("student-04", student);
 
     this.route.params.subscribe(
       params => {
@@ -43,12 +49,16 @@ export class FormTccComponent implements OnInit {
         this.studentService.getDetail(params["id"], localStorage.getItem("token")).subscribe(
           response => {
             this.student = response.data;
-            let student = new FormControl({ value: this.student.name, disabled: true }, Validators.required);
+            let student = new FormControl({ value: this.student.tia, disabled: true }, Validators.required);
             this.form.addControl("student-01", student);
           }
       );
       }
     );
+  }
+
+  addMember(){
+    this.groupSize++;
   }
 
 }

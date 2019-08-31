@@ -31,8 +31,22 @@
                     <label for="student">Integrantes</label>
                 </div>
                 <div class="col-12 col-sm-8">
-                    <input formControlName="student-01" id="student" class="form-control" type="text" required/>
+                    <input formControlName="student-01" class="form-control mb-2" type="text" required/>
+                    <input *ngIf="groupSize>1" formControlName="student-02" class="form-control mb-2" type="text" placeholder="Integrante #2"/>
+                    <input *ngIf="groupSize>2" formControlName="student-03" class="form-control mb-2" type="text" placeholder="Integrante #3"/>
+                    <input *ngIf="groupSize>3" formControlName="student-04" class="form-control" type="text" placeholder="Integrante #4">
                 </div>
+            </div>
+            <div class="row button mt-2" [hidden]="groupSize>3">
+                <div class="col-12 col-sm-8">
+                    <button (click)="addMember()" class="btn btn-dark add">+</button>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 ">
+                    <button class="btn btn-danger w-100" type="submit">Cadastrar</button>
+                </div>
+                
             </div>
         </form>
     </div>

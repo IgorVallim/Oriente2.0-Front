@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { AuthService } from 'src/app/services/auth.service';
+import { LoginService } from 'src/app/services/login.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { student, professor } from 'src/app/constants/login';
 import { User } from 'src/app/models/user';
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   user: User;
   error: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private loginService: AuthService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private loginService: LoginService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
 

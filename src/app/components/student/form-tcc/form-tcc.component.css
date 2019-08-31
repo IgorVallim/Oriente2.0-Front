@@ -19,3 +19,17 @@
         text-align: center;
     }
   } 
+
+ .add{
+     height: 30px;
+     width: 30px;
+     justify-content: center;
+     align-items: center;
+     display: flex;
+     flex-flow: column;
+ } 
+
+ .button{
+     display: flex;
+     justify-content: flex-end;
+ }
