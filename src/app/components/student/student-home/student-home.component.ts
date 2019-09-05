@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { StudentService } from 'src/app/services/student.service';
 
 @Component({
@@ -9,14 +9,20 @@ import { StudentService } from 'src/app/services/student.service';
 })
 export class StudentHomeComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private studentService: StudentService) { }
+  constructor(private route: ActivatedRoute, private studentService: StudentService, private router: Router) { }
 
   ngOnInit() {
 
     this.route.params.subscribe(
       params => {
         this.studentService.getDetail(params['id'], localStorage.getItem("token")).subscribe(
-          response => {}
+          response => {
+            if(response.data.tccId === null){
+              this.router.navigate(["orientadores"], { relativeTo: this.route });
+            }else{
+              this.router.navigate(["projeto"], { relativeTo: this.route });
+            }
+          }
         );
       }
     );

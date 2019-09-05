@@ -37,27 +37,35 @@ export class LoginComponent implements OnInit {
 
   onFormSubmit(){
     if(this.user.name === professor.name){
-      this.loginService.loginProfessor(this.login.controls.id.value, this.login.controls.password.value).subscribe(
-        response => {
-          localStorage.setItem("token", response.headers.get("token"));
-          this.router.navigate([this.user.route + response.body.data.id]);
-        },
-        error => {
-          this.error = true;
-        }
-      );
+      this.loginProfessor();
     }else{
-      this.loginService.loginStudent(this.login.controls.id.value, this.login.controls.password.value).subscribe(
-        response => {
-          localStorage.setItem("token", response.headers.get("token"));
-          this.router.navigate([this.user.route + response.body.data.id + "/orientadores"]);
-        },
-        error => {
-          this.error = true;
-        }
-      );
+      this.loginStudent();
     }
     
+  }
+
+  loginProfessor(){
+    this.loginService.loginProfessor(this.login.controls.id.value, this.login.controls.password.value).subscribe(
+      response => {
+        localStorage.setItem("token", response.headers.get("token"));
+        this.router.navigate([this.user.route + response.body.data.id]);
+      },
+      error => {
+        this.error = true;
+      }
+    );
+  }
+
+  loginStudent(){
+    this.loginService.loginStudent(this.login.controls.id.value, this.login.controls.password.value).subscribe(
+      response => {
+        localStorage.setItem("token", response.headers.get("token"));
+        this.router.navigate([this.user.route + response.body.data.id]);
+      },
+      error => {
+        this.error = true;
+      }
+    );
   }
 }
 

@@ -6,13 +6,15 @@ import { StudentHomeComponent } from './components/student/student-home/student-
 import { ProfessorListComponent } from './components/student/professor-list/professor-list.component';
 import { FormTccComponent } from './components/student/form-tcc/form-tcc.component';
 import { AuthGuardService } from './services/authentication/auth-guard.service';
+import { ProjectComponent } from './components/student/project/project.component';
 
 const routes: Routes = [
   { path: ":user/login", component: LoginComponent },
   { path: "", component: AreaComponent },
   { path: "aluno/:id", component: StudentHomeComponent, canActivate: [AuthGuardService], children: [
       { path: "orientadores", component: ProfessorListComponent },
-      { path: "cadastro-tcc/:orientador", component: FormTccComponent } 
+      { path: "cadastro-tcc/:orientador", component: FormTccComponent },
+      { path: "projeto", component: ProjectComponent }  
   ]}
 ];
 

@@ -11,27 +11,27 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/shared/login/login.component';
 import { AreaComponent } from './components/shared/area/area.component';
 import { StudentHomeComponent } from './components/student/student-home/student-home.component';
-import { MenuComponent } from './components/student/menu/menu.component';
-import { SideMenuComponent } from './components/student/side-menu/side-menu.component';
+import { StudentMenuComponent } from './components/student/student-menu/student-menu.component';
+import { StudentSideMenuComponent } from './components/student/student-side-menu/student-side-menu.component';
 import { IconComponent } from './components/utils/icon/icon.component';
 import { ProfessorListComponent } from './components/student/professor-list/professor-list.component';
 import { ProfessorCardComponent } from './components/student/professor-card/professor-card.component';
 import { FormTccComponent } from './components/student/form-tcc/form-tcc.component';
-import { AuthGuardService } from './services/authentication/auth-guard.service'; 
-
-
+import { AuthGuardService } from './services/authentication/auth-guard.service';
+import { ProjectComponent } from './components/student/project/project.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AreaComponent,
     StudentHomeComponent,
-    MenuComponent,
-    SideMenuComponent,
+    StudentMenuComponent,
+    StudentSideMenuComponent,
     IconComponent,
     ProfessorListComponent,
     ProfessorCardComponent,
-    FormTccComponent
+    FormTccComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,

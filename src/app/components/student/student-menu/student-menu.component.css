@@ -7,6 +7,7 @@
 .menu{
     position: fixed;
     z-index: 666;
+    justify-content: space-between;
 }
 
 

@@ -3,4 +3,5 @@ export class Student{
     tia: number;
     name: string;
     email: string;
+    photo?: string;
 }
