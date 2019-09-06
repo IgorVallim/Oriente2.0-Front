@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Student } from 'src/app/models/student';
 
 @Component({
   selector: 'app-student-side-menu',
@@ -8,7 +9,10 @@ import { Router } from '@angular/router';
 })
 export class StudentSideMenuComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  @Input() student: Student;
+  @Output() sidenavClose = new EventEmitter();
+
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
@@ -18,4 +22,8 @@ export class StudentSideMenuComponent implements OnInit {
     this.router.navigate([""]);
   }
 
+  editProfile(){
+    this.router.navigate(["perfil"], {relativeTo: this.route});
+    this.sidenavClose.emit();
+  }
 }

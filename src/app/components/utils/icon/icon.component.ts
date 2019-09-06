@@ -11,6 +11,7 @@ export class IconComponent implements OnInit {
 
   @Input() icon: string;
   @Input() color: string;
+  @Input() size: number;
 
   constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) { 
     
@@ -25,9 +26,9 @@ export class IconComponent implements OnInit {
 
   }
 
-  setColor(){
+  setStyle(){
 
-    return { "color": this.color }
+    return { "color": this.color, "width": this.size + "px", "height": this.size + "px"}
   }
 
 }

@@ -10,4 +10,19 @@
     justify-content: space-between;
 }
 
+.logout{
+    background-color: transparent;
+    border: none;
+}
+
+img{
+    width: 48px;
+    height: 48px;
+    border-radius: 5px;
+}
+
+.profile{
+    flex-flow: row;
+    justify-content: flex-start;
+}
 

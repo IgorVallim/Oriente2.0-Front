@@ -19,6 +19,7 @@ import { ProfessorCardComponent } from './components/student/professor-card/prof
 import { FormTccComponent } from './components/student/form-tcc/form-tcc.component';
 import { AuthGuardService } from './services/authentication/auth-guard.service';
 import { ProjectComponent } from './components/student/project/project.component';
+import { StudentProfileComponent } from './components/student/student-profile/student-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { ProjectComponent } from './components/student/project/project.component
     ProfessorListComponent,
     ProfessorCardComponent,
     FormTccComponent,
-    ProjectComponent
+    ProjectComponent,
+    StudentProfileComponent
   ],
   imports: [
     BrowserModule,

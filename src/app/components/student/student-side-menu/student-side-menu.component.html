@@ -1,6 +1,10 @@
 <ul>
-    <li (click)="logout()">
-        <app-icon icon="logout" color="black"></app-icon>
-        <span class="ml-2 mt-1">Sair</span>
+    <li *ngIf="student" (click)="editProfile()">
+        <img [src]="student.photo || './assets/images/profile.png'">
+        <span class="ml-3">Perfil</span>
+    </li>
+    <li (click)="logout()" class="logout">
+        <app-icon [size]="36" icon="logout" color="black"></app-icon>
+        <span class="ml-3">Sair</span>
     </li>
 </ul>

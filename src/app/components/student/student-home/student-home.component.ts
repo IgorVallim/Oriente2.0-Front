@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StudentService } from 'src/app/services/student.service';
+import { Student } from 'src/app/models/student';
 
 @Component({
   selector: 'app-student-home',
@@ -8,6 +9,8 @@ import { StudentService } from 'src/app/services/student.service';
   styleUrls: ['./student-home.component.css']
 })
 export class StudentHomeComponent implements OnInit {
+
+  student: Student;
 
   constructor(private route: ActivatedRoute, private studentService: StudentService, private router: Router) { }
 
@@ -17,6 +20,7 @@ export class StudentHomeComponent implements OnInit {
       params => {
         this.studentService.getDetail(params['id'], localStorage.getItem("token")).subscribe(
           response => {
+            this.student = response.data;
             if(response.data.tccId === null){
               this.router.navigate(["orientadores"], { relativeTo: this.route });
             }else{

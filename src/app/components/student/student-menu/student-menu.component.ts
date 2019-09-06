@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Student } from 'src/app/models/student';
 
 @Component({
   selector: 'app-student-menu',
@@ -8,9 +9,10 @@ import { Router } from '@angular/router';
 })
 export class StudentMenuComponent{
 
-  constructor(private router: Router){}
-
   @Output() sidenavToggle = new EventEmitter();
+  @Input() student: Student;
+
+  constructor(private router: Router, private route: ActivatedRoute){}
 
   public onToggleSidenav = () => {
     this.sidenavToggle.emit();
@@ -19,6 +21,10 @@ export class StudentMenuComponent{
   logout(){
     localStorage.clear();
     this.router.navigate([""]);
+  }
+
+  editProfile(){
+    this.router.navigate(["perfil"], {relativeTo: this.route});
   }
 
 }
