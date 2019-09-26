@@ -1,0 +1,21 @@
+ul{
+    list-style: none;
+    padding: 20px;
+}
+
+li{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.not-first{
+    border-top: 1px solid lightgray;
+}
+
+img{
+    width: 34px;
+    height: 34px;
+    border-radius: 50px;
+}

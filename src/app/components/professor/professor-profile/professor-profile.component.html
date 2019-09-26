@@ -1,0 +1,25 @@
+<div class="row mt-3">
+    <div class="col-10 col-sm-6 card">
+        <h2>Editar Perfil</h2>
+        <form [formGroup]="form" class="form-group">
+            <div class="row mt-3">
+                <div class="col-12 col-sm-4 mb-3">
+                    <label for="file"><img [src]="photo"></label>
+                    <input (change)="upload($event)" accept="image/*" formControlName="photo" id="file" type="file">
+                </div>
+                <div class="col-12 col-sm-8">
+                    <input formControlName="drt" type="text" class="form-control">
+                    <input formControlName="course" type="text" class="form-control mt-3">
+                    <input formControlName="name" type="email" class="form-control mt-3 mb-3">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <input formControlName="email" type="text" class="form-control mb-2">
+                    <span [ngClass]="error? 'text-danger': 'text-success'">{{message}}</span>
+                    <button (click)="submit()" class="btn btn-danger w-100 mt-2">Editar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,1 +1,11 @@
-<p>professor-home works!</p>
+<mat-sidenav-container fullscreen>
+    <mat-sidenav [fixedInViewport]="true" role="navigation" #sidenav>
+      <app-professor-side-menu [professor]="professor" (sidenavClose)="sidenav.close()"></app-professor-side-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <app-professor-menu [professor]="professor" (sidenavToggle)="sidenav.toggle()"></app-professor-menu>
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

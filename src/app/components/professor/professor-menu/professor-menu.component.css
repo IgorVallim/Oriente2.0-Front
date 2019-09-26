@@ -1,0 +1,27 @@
+@media(max-width: 959px){
+    mat-toolbar{
+        border-radius: 0px;
+    }
+}
+
+.menu{
+    position: fixed;
+    z-index: 666;
+    justify-content: space-between;
+}
+
+.logout{
+    background-color: transparent;
+    border: none;
+}
+
+img{
+    width: 48px;
+    height: 48px;
+    border-radius: 50px;
+}
+
+.profile{
+    flex-flow: row;
+    justify-content: flex-start;
+}

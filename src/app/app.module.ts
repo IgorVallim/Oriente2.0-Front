@@ -22,6 +22,10 @@ import { ProjectComponent } from './components/student/project/project.component
 import { StudentProfileComponent } from './components/student/student-profile/student-profile.component';
 import { SessionService } from './services/session.service';
 import { ProfessorHomeComponent } from './components/professor/professor-home/professor-home.component';
+import { ProfessorMenuComponent } from './components/professor/professor-menu/professor-menu.component';
+import { ProfessorSideMenuComponent } from './components/professor/professor-side-menu/professor-side-menu.component';
+import { ProjectsComponent } from './components/professor/projects/projects.component';
+import { ProfessorProfileComponent } from './components/professor/professor-profile/professor-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +40,11 @@ import { ProfessorHomeComponent } from './components/professor/professor-home/pr
     FormTccComponent,
     ProjectComponent,
     StudentProfileComponent,
-    ProfessorHomeComponent
+    ProfessorHomeComponent,
+    ProfessorMenuComponent,
+    ProfessorSideMenuComponent,
+    ProjectsComponent,
+    ProfessorProfileComponent
   ],
   imports: [
     BrowserModule,

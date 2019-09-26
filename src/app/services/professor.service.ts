@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Professor } from '../models/professor';
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +24,15 @@ export class ProfessorService {
 
   getHeaders(token: string){
     return { headers: new HttpHeaders({'Authorization': token}) };
+  }
+
+  getByTeacher(token: string){
+    let headers = this.getHeaders(token);
+    return this.http.get<any>(this.API + "search/rudder", headers);
+  }
+
+  update(professor: Professor, token: string){
+    let headers = this.getHeaders(token);
+    return this.http.post<Professor>(this.API, professor, headers);
   }
 }

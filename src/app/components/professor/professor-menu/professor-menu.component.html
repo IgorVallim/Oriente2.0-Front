@@ -4,9 +4,9 @@
             <app-icon icon="menu" color="black"></app-icon>
         </button>
     </div>
-    <div (click)="editProfile()" *ngIf="student" class="d-none d-sm-flex profile">
-        <img [src]="student.photo || './assets/images/profile.png'"> 
-        <h3 class="mt-2 ml-2">{{student.name}}</h3>
+    <div (click)="editProfile()" *ngIf="professor" class="d-none d-sm-flex profile">
+        <img [src]="professor.photo || './assets/images/profile.png'"> 
+        <h3 class="mt-2 ml-2">{{professor.name}}</h3>
     </div>
     <div class="d-none d-sm-block">
         <button class="logout mr-3" (click)="goHome()">

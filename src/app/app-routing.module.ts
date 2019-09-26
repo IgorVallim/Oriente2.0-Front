@@ -9,6 +9,8 @@ import { AuthGuardService } from './services/authentication/auth-guard.service';
 import { ProjectComponent } from './components/student/project/project.component';
 import { StudentProfileComponent } from './components/student/student-profile/student-profile.component';
 import { ProfessorHomeComponent } from './components/professor/professor-home/professor-home.component';
+import { ProjectsComponent } from './components/professor/projects/projects.component';
+import { ProfessorProfileComponent } from './components/professor/professor-profile/professor-profile.component';
 
 const routes: Routes = [
   { path: ":user/login", component: LoginComponent },
@@ -19,7 +21,10 @@ const routes: Routes = [
       { path: "projeto", component: ProjectComponent },
       { path: "perfil", component: StudentProfileComponent }  
   ]},
-  { path: "professor/:id", component: ProfessorHomeComponent, canActivate: [AuthGuardService] }
+  { path: "professor/:id", component: ProfessorHomeComponent, canActivate: [AuthGuardService], children: [
+      { path: "projetos", component: ProjectsComponent },
+      { path: "perfil", component: ProfessorProfileComponent }
+  ]}
 ];
 
 @NgModule({
