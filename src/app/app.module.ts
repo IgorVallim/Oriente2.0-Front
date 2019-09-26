@@ -20,6 +20,8 @@ import { FormTccComponent } from './components/student/form-tcc/form-tcc.compone
 import { AuthGuardService } from './services/authentication/auth-guard.service';
 import { ProjectComponent } from './components/student/project/project.component';
 import { StudentProfileComponent } from './components/student/student-profile/student-profile.component';
+import { SessionService } from './services/session.service';
+import { ProfessorHomeComponent } from './components/professor/professor-home/professor-home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,8 @@ import { StudentProfileComponent } from './components/student/student-profile/st
     ProfessorCardComponent,
     FormTccComponent,
     ProjectComponent,
-    StudentProfileComponent
+    StudentProfileComponent,
+    ProfessorHomeComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,7 @@ import { StudentProfileComponent } from './components/student/student-profile/st
     BrowserAnimationsModule, 
     MatIconModule
   ],
-  providers: [AuthGuardService],
+  providers: [AuthGuardService, SessionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

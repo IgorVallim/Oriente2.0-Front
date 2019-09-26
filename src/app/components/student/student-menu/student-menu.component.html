@@ -9,6 +9,9 @@
         <h3 class="mt-2 ml-2">{{student.name.split(" ")[0]}}</h3>
     </div>
     <div class="d-none d-sm-block">
+        <button class="logout mr-3" (click)="goHome()">
+                <app-icon [size]="35" icon="home" color="black"></app-icon>
+        </button>
         <button class="logout" (click)="logout()">
             <app-icon [size]="35" icon="logout" color="black"></app-icon>
         </button>

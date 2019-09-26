@@ -12,12 +12,16 @@ export class ProfessorService {
   constructor(private http: HttpClient) { }
 
   getList(token: string){
-    let headers = { headers: new HttpHeaders({'Authorization': token}) };
+    let headers = this.getHeaders(token);
     return this.http.get<any>(this.API + "teacher-list/", headers);
   }
 
   getDetail(id: string, token: string){
-    let headers = { headers: new HttpHeaders({'Authorization': token}) };
+    let headers = this.getHeaders(token);
     return this.http.get<any>(this.API + "detail/" + id, headers);
+  }
+
+  getHeaders(token: string){
+    return { headers: new HttpHeaders({'Authorization': token}) };
   }
 }

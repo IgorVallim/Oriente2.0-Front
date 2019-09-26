@@ -3,7 +3,11 @@
         <img [src]="student.photo || './assets/images/profile.png'">
         <span class="ml-3">Perfil</span>
     </li>
-    <li (click)="logout()" class="logout">
+    <li (click)="goHome()" class="not-first">
+            <app-icon [size]="36" icon="home" color="black"></app-icon>
+            <span class="ml-3">Home</span>
+    </li>
+    <li (click)="logout()" class="not-first">
         <app-icon [size]="36" icon="logout" color="black"></app-icon>
         <span class="ml-3">Sair</span>
     </li>

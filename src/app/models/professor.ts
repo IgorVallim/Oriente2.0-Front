@@ -4,4 +4,5 @@ export class Professor{
     name: string;
     email: string;
     photo: string;
+    course: string[];
 }

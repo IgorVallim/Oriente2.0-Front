@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TccService } from 'src/app/services/tcc.service';
 import { TCC } from 'src/app/models/tcc';
+import { SessionService } from 'src/app/services/session.service';
 
 @Component({
   selector: 'app-project',
@@ -9,12 +10,13 @@ import { TCC } from 'src/app/models/tcc';
 })
 export class ProjectComponent implements OnInit {
 
-  tcc: TCC;
+  tcc: any;
 
-  constructor(private tccService: TccService) { }
+  constructor(private tccService: TccService, private sessionService: SessionService) { }
 
   ngOnInit() {
-    this.tccService.getDetail(1, localStorage.getItem("token")).subscribe( //Passar id do TCC do aluno
+    let student = this.sessionService.getUser();
+    this.tccService.getDetail(student.tccId, this.sessionService.getToken()).subscribe( 
       response => {
         this.tcc = response.data;
       }

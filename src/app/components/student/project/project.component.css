@@ -4,5 +4,10 @@
 }
 
 .card{
-    text-align: center; 
+    text-align: center;
+    padding: 30px; 
+}
+
+.description{
+    text-align: left;
 }

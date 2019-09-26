@@ -8,6 +8,7 @@ import { FormTccComponent } from './components/student/form-tcc/form-tcc.compone
 import { AuthGuardService } from './services/authentication/auth-guard.service';
 import { ProjectComponent } from './components/student/project/project.component';
 import { StudentProfileComponent } from './components/student/student-profile/student-profile.component';
+import { ProfessorHomeComponent } from './components/professor/professor-home/professor-home.component';
 
 const routes: Routes = [
   { path: ":user/login", component: LoginComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
       { path: "cadastro-tcc/:orientador", component: FormTccComponent },
       { path: "projeto", component: ProjectComponent },
       { path: "perfil", component: StudentProfileComponent }  
-  ]}
+  ]},
+  { path: "professor/:id", component: ProfessorHomeComponent, canActivate: [AuthGuardService] }
 ];
 
 @NgModule({

@@ -4,4 +4,6 @@ export class Student{
     name: string;
     email: string;
     photo?: string;
+    course: string;
+    tccId: string;
 }
