@@ -18,14 +18,15 @@ import { ProfessorListComponent } from './components/student/professor-list/prof
 import { ProfessorCardComponent } from './components/student/professor-card/professor-card.component';
 import { FormTccComponent } from './components/student/form-tcc/form-tcc.component';
 import { AuthGuardService } from './services/authentication/auth-guard.service';
-import { ProjectComponent } from './components/student/project/project.component';
+import { ProjectDetailComponent } from './components/shared/project-detail/project-detail.component';
 import { StudentProfileComponent } from './components/student/student-profile/student-profile.component';
 import { SessionService } from './services/session.service';
 import { ProfessorHomeComponent } from './components/professor/professor-home/professor-home.component';
 import { ProfessorMenuComponent } from './components/professor/professor-menu/professor-menu.component';
 import { ProfessorSideMenuComponent } from './components/professor/professor-side-menu/professor-side-menu.component';
-import { ProjectsComponent } from './components/professor/projects/projects.component';
+import { ProjectListComponent } from './components/professor/project-list/project-list.component';
 import { ProfessorProfileComponent } from './components/professor/professor-profile/professor-profile.component';
+import { ProjectCardComponent } from './components/professor/project-card/project-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,13 +39,14 @@ import { ProfessorProfileComponent } from './components/professor/professor-prof
     ProfessorListComponent,
     ProfessorCardComponent,
     FormTccComponent,
-    ProjectComponent,
+    ProjectDetailComponent,
     StudentProfileComponent,
     ProfessorHomeComponent,
     ProfessorMenuComponent,
     ProfessorSideMenuComponent,
-    ProjectsComponent,
-    ProfessorProfileComponent
+    ProjectListComponent,
+    ProfessorProfileComponent,
+    ProjectCardComponent
   ],
   imports: [
     BrowserModule,

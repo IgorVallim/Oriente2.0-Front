@@ -6,10 +6,10 @@ import { StudentHomeComponent } from './components/student/student-home/student-
 import { ProfessorListComponent } from './components/student/professor-list/professor-list.component';
 import { FormTccComponent } from './components/student/form-tcc/form-tcc.component';
 import { AuthGuardService } from './services/authentication/auth-guard.service';
-import { ProjectComponent } from './components/student/project/project.component';
+import { ProjectDetailComponent } from './components/shared/project-detail/project-detail.component';
 import { StudentProfileComponent } from './components/student/student-profile/student-profile.component';
 import { ProfessorHomeComponent } from './components/professor/professor-home/professor-home.component';
-import { ProjectsComponent } from './components/professor/projects/projects.component';
+import { ProjectListComponent } from './components/professor/project-list/project-list.component';
 import { ProfessorProfileComponent } from './components/professor/professor-profile/professor-profile.component';
 
 const routes: Routes = [
@@ -18,12 +18,13 @@ const routes: Routes = [
   { path: "aluno/:id", component: StudentHomeComponent, canActivate: [AuthGuardService], children: [
       { path: "orientadores", component: ProfessorListComponent },
       { path: "cadastro-tcc/:orientador", component: FormTccComponent },
-      { path: "projeto", component: ProjectComponent },
+      { path: "projeto", component: ProjectDetailComponent },
       { path: "perfil", component: StudentProfileComponent }  
   ]},
   { path: "professor/:id", component: ProfessorHomeComponent, canActivate: [AuthGuardService], children: [
-      { path: "projetos", component: ProjectsComponent },
-      { path: "perfil", component: ProfessorProfileComponent }
+      { path: "projetos", component: ProjectListComponent },
+      { path: "perfil", component: ProfessorProfileComponent },
+      { path: "projeto/:tcc", component: ProjectDetailComponent }
   ]}
 ];
 

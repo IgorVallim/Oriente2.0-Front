@@ -1,0 +1,22 @@
+.title{
+    display: flex;
+    justify-content: center;
+}
+
+p{
+    margin: 0;
+}
+
+.card{
+    padding: 20px 0px;
+}
+
+.members{
+    text-align: center;
+}
+
+.detail{
+    display: flex;
+    justify-content: center;
+}
+

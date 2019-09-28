@@ -71,7 +71,7 @@ export class FormTccComponent implements OnInit {
       this.error = "";
     this.tcc = new TCC();
     this.tcc.students = [];
-    this.tcc.tccStage = "Tcc1";
+    this.tcc.tccStage = "Tcc1"; //Deixar dinamico
     this.tcc.rudderId = this.professor.id;
     this.tcc.course = this.student.course;
     this.tcc.theme = this.form.controls.theme.value;
