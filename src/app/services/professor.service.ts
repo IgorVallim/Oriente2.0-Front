@@ -26,13 +26,8 @@ export class ProfessorService {
     return { headers: new HttpHeaders({'Authorization': token}) };
   }
 
-  getByTeacher(token: string){
-    let headers = this.getHeaders(token);
-    return this.http.get<any>(this.API + "search/rudder", headers);
-  }
-
   update(professor: Professor, token: string){
     let headers = this.getHeaders(token);
-    return this.http.post<Professor>(this.API, professor, headers);
+    return this.http.put<Professor>(this.API, professor, headers);
   }
 }

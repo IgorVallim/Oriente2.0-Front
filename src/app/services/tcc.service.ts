@@ -26,4 +26,9 @@ export class TccService {
   getHeaders(token: string){
     return { headers: new HttpHeaders({'Authorization': token}) };
   }
+
+  getByTeacher(token: string){
+    let headers = this.getHeaders(token);
+    return this.http.get<any>(this.API + "search/rudder", headers);
+  }
 }

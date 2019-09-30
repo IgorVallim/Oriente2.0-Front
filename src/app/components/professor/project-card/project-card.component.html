@@ -1,6 +1,6 @@
 <div class="bg-white card">
     <div class="row title">
-        <h3>Título do projeto</h3>
+        <h3>{{tcc.theme}}</h3>
     </div>
    
     <div class="row mt-2">
@@ -8,10 +8,7 @@
             <strong>Integrantes</strong>
         </div>
         <div class="col-12 col-sm-7 members">
-            <p>Igor Vallim Sordi</p>
-            <p>Fernando Grangeiro</p>
-            <p>Beatriz Aurelio</p>
-            <p>Lucas Barros</p>
+            <p *ngFor="let student of tcc.students">{{student.name}}</p>
         </div>
     </div>
     <div class="row mt-4 detail">
