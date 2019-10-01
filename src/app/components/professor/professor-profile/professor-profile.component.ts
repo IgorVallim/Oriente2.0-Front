@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SafeUrl, DomSanitizer } from '@angular/platform-browser';
 import { ProfessorService } from 'src/app/services/professor.service';
 import { SessionService } from 'src/app/services/session.service';
+import { NgxImageCompressService } from 'ngx-image-compress';
 
 @Component({
   selector: 'app-professor-profile',
@@ -18,9 +19,11 @@ export class ProfessorProfileComponent{
   error: boolean = false;
   success: string;
   photo: SafeUrl;
+  changed: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private professorService: ProfessorService, 
-    private sanitizer: DomSanitizer, private sessionService: SessionService) { 
+    private sanitizer: DomSanitizer, private sessionService: SessionService,
+    private imageCompress: NgxImageCompressService) { 
 
     this.professor = this.sessionService.getUser();
     if(this.professor.photo) {
@@ -50,7 +53,7 @@ export class ProfessorProfileComponent{
     }else{
       this.professor.name = this.form.controls.name.value;
       this.professor.email = this.form.controls.email.value;
-      this.professor.photo = this.photo.toString();
+      if(this.changed) this.professor.photo = this.photo.toString();
       this.professorService.update(this.professor, this.sessionService.getToken()).subscribe(
         success => {  
           this.showSuccess();
@@ -83,17 +86,17 @@ export class ProfessorProfileComponent{
     this.message = "Perfil editado com sucesso!";
   }
 
-  upload($event){
+  upload() {
+    this.imageCompress.uploadFile().then(({ image, orientation }) => {
 
-    let file:File = $event.target.files[0];
-    let myReader:FileReader = new FileReader();
-  
-    myReader.onloadend = (e) => {
-      if(myReader.result){
-        this.photo = myReader.result;
-      }
-    }
-    if(file) myReader.readAsDataURL(file);
+      this.imageCompress.compressFile(image, orientation, 30, 30).then(
+        result => {
+          this.photo = result;
+          this.changed = true;
+        }
+      );
+
+    });
   }
 
 }

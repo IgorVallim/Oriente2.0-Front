@@ -17,7 +17,7 @@ export class ProfessorCardComponent implements OnInit {
 
   ngOnInit() {
     if(this.professor.photo){
-      let objectURL = 'data:image/jpeg;base64,' + this.professor.photo;
+      let objectURL = this.professor.photo;
       this.image = this.sanitizer.bypassSecurityTrustUrl(objectURL);
     }else{
       this.image = "./assets/images/profile.png";

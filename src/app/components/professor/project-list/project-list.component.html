@@ -1,4 +1,5 @@
 <div class="row">
+    <p *ngIf="!hasProjects">Você ainda não possui projetos cadastrados!</p>
     <div *ngFor="let tcc of tccs" class="col-12 col-sm-4 mt-4">
         <app-project-card [tcc]="tcc"></app-project-card>
     </div>

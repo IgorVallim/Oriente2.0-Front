@@ -11,6 +11,7 @@ import { TCC } from 'src/app/models/tcc';
 export class ProjectListComponent implements OnInit {
 
   tccs: TCC[];
+  hasProjects: boolean;
 
   constructor(private tccService: TccService, private sessionService: SessionService) { }
 
@@ -18,6 +19,7 @@ export class ProjectListComponent implements OnInit {
     this.tccService.getByTeacher(this.sessionService.getToken()).subscribe(
       response => {
         this.tccs = response.data.items;
+        if(this.tccs.length>0) this.hasProjects = true;
       }
     );
   }

@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatSidenavModule, MatToolbarModule, MatIconModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxImageCompressService } from 'ngx-image-compress';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ import { ProfessorSideMenuComponent } from './components/professor/professor-sid
 import { ProjectListComponent } from './components/professor/project-list/project-list.component';
 import { ProfessorProfileComponent } from './components/professor/professor-profile/professor-profile.component';
 import { ProjectCardComponent } from './components/professor/project-card/project-card.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +62,11 @@ import { ProjectCardComponent } from './components/professor/project-card/projec
     BrowserAnimationsModule, 
     MatIconModule
   ],
-  providers: [AuthGuardService, SessionService],
+  providers: [
+    AuthGuardService, 
+    SessionService,
+    NgxImageCompressService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
