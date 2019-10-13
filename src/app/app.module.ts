@@ -1,3 +1,4 @@
+//São onde as rotas são definidas. Permite a navegação entre os componentes, é feito isso através de rotas
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';

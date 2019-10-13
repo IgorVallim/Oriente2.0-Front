@@ -15,6 +15,7 @@ export class ProfessorCardComponent implements OnInit {
 
   constructor(private router: Router, private route: ActivatedRoute, private sanitizer: DomSanitizer) { }
 
+  //metodo que é chamado toda vez que o componente conclui a sua realização
   ngOnInit() {
     if(this.professor.photo){
       let objectURL = 'data:image/jpeg;base64,' + this.professor.photo;
